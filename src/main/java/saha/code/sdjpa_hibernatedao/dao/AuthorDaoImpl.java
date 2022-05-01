@@ -10,7 +10,7 @@ import javax.persistence.TypedQuery;
 import javax.persistence.criteria.*;
 import java.util.List;
 
-@Component
+@Component(value = "authorDaoImpl")
 public class AuthorDaoImpl implements AuthorDao {
 
     private final EntityManagerFactory emf;

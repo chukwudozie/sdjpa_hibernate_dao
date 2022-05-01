@@ -1,5 +1,6 @@
 package saha.code.sdjpa_hibernatedao.dao;
 
+import org.springframework.data.domain.Pageable;
 import saha.code.sdjpa_hibernatedao.domain.Book;
 
 import java.util.List;
@@ -21,5 +22,9 @@ public interface BookDao {
     Book findByISBN(String isbn);
 
     List<Book> findAll();
+
+    List<Book>findAllBooksSortByTitle(Pageable pageable);
+    List<Book> findAllBooks(Pageable pageable);
+    List<Book> findAllBooks(int pageSize, int offset);
 
 }

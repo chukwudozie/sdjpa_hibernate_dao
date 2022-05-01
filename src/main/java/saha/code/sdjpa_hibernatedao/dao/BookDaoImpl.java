@@ -1,5 +1,6 @@
 package saha.code.sdjpa_hibernatedao.dao;
 
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Component;
 import saha.code.sdjpa_hibernatedao.domain.Author;
 import saha.code.sdjpa_hibernatedao.domain.Book;
@@ -9,9 +10,10 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 import javax.persistence.criteria.*;
+import java.util.ArrayList;
 import java.util.List;
 
-@Component
+@Component(value = "bookDaoImpl")
 public class BookDaoImpl implements BookDao{
     private final EntityManagerFactory emf;
 
@@ -96,6 +98,21 @@ public class BookDaoImpl implements BookDao{
         } finally {
             em.close();
         }
+    }
+
+    @Override
+    public List<Book> findAllBooksSortByTitle(Pageable pageable) {
+        return new ArrayList<>();
+    }
+
+    @Override
+    public List<Book> findAllBooks(Pageable pageable) {
+        return new ArrayList<>();
+    }
+
+    @Override
+    public List<Book> findAllBooks(int pageSize, int offset) {
+        return new ArrayList<>();
     }
 
     @Override

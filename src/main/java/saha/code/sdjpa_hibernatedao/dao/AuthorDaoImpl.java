@@ -1,5 +1,6 @@
 package saha.code.sdjpa_hibernatedao.dao;
 
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Component;
 import saha.code.sdjpa_hibernatedao.domain.Author;
 
@@ -8,6 +9,7 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 import javax.persistence.criteria.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Component(value = "authorDaoImpl")
@@ -17,6 +19,11 @@ public class AuthorDaoImpl implements AuthorDao {
 
     public AuthorDaoImpl(EntityManagerFactory emf) {
         this.emf = emf;
+    }
+
+    @Override
+    public List<Author> findAllAuthorsByLastName(String lastName, Pageable pageable) {
+        return new ArrayList<>();
     }
 
     @Override
